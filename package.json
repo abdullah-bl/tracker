@@ -1,5 +1,5 @@
 {
-  "name": "fixed",
+  "name": "tracke",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.1.1",
+    "@tanstack/react-virtual": "^3.0.0-alpha.0",
     "@tauri-apps/api": "^1.0.2",
+    "million": "^1.12.3-beta.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.2",
@@ -20,6 +22,7 @@
     "react-router-dom": "^6.3.0",
     "react-select": "^5.4.0",
     "react-table": "^7.8.0",
+    "react-window": "^1.8.7",
     "xlsx": "^0.18.5",
     "zustand": "^4.0.0-rc.4"
   },
@@ -31,6 +34,7 @@
     "@tauri-apps/cli": "^1.0.5",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@types/react-window": "^1.8.5",
     "@vitejs/plugin-react": "^2.0.0",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.14",

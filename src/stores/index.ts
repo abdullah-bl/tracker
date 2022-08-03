@@ -1,2 +1,2 @@
 export { useSettingsStore } from './useSettings'
-export { useUIStore } from './useStore'
+export { useStore } from './useStore'

@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "fixed",
+    "productName": "tracker",
     "version": "0.1.0"
   },
   "tauri": {
@@ -81,7 +81,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "Tauri App",
+        "title": "Tracker App",
         "width": 800,
         "fileDropEnabled": true
       }

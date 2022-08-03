@@ -1,7 +1,8 @@
 import * as React from "react";
-import { useSettingsStore } from "../../stores";
+import { useSettingsStore, useStore } from "../../stores";
 
 export default function SettingsLanding() {
+  const { employees, appends } = useStore();
   const { appName, appVersion, reactVersion, init } = useSettingsStore(
     (state) => state
   );
@@ -25,6 +26,14 @@ export default function SettingsLanding() {
         <span>
           React Version:
           {reactVersion}
+        </span>
+        <span>
+          Employee:
+          {employees.length}
+        </span>
+        <span>
+          Appends:
+          {appends.length}
         </span>
       </div>
     </div>

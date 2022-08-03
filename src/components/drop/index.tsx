@@ -1,24 +1,30 @@
 import { useCallback, useRef } from "react";
 import { useDropzone } from "react-dropzone";
-import { useUIStore } from "../../stores";
 import { handleFile } from "../../utils/file";
 import { notification } from "@tauri-apps/api";
+import { useStore } from "../../stores";
+import { processExcelFile } from "../../utils/handleFiles";
 
 export default function Drop() {
-  const setIsLoading = useUIStore((state) => state.setIsLoading);
+  const { setEmployees, setIsLoading } = useStore((state) => state);
   const ref = useRef<HTMLInputElement>(null);
 
   const onChange = async (ev: React.ChangeEvent<HTMLInputElement>) => {
     // Do something with the files
     setIsLoading();
+    const start = Date.now();
     const file = ev?.target?.files?.[0];
     if (
       file?.type ===
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     ) {
-      const data = await handleFile(file);
+      const data = await processExcelFile(file);
       if (data) {
-        notification.sendNotification("Success");
+        setEmployees(data);
+        const end = Date.now();
+        notification.sendNotification(
+          `Success, Import completed in ${end - start}ms`
+        );
       }
     } else {
       notification.sendNotification("Sorry, only .xlsx files are supported");

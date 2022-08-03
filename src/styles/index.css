@@ -54,3 +54,9 @@ button:focus-visible {
   }
 
 }
+
+
+
+::-webkit-scrollbar {
+  width: 20xp
+}
